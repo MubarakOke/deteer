@@ -14,14 +14,7 @@ if (process.env.NODE_ENV==='development'){
     db= process.env.DATABASE
 }
 else{
-    const {
-        DB_USER,
-        DB_PASSWORD,
-        DB_HOST,
-        DB_PORT,
-        DB_NAME,
-      } = process.env
-      db= `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`
+      db= process.env.DATABASE_PROD
 }
 
 mongoose.connect(db,{})

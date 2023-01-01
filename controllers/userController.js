@@ -28,7 +28,7 @@ exports.login= catchAsync(async (req, res, next)=>{
     user.password= undefined
     
     // Send Response
-    res.status(201).json({
+    res.status(200).json({
         status: 'success',
         data: {
             token,
